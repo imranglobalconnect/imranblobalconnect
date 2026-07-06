@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muhammad Imran – WooCommerce & On-Page SEO Specialist. Premium portfolio for Fiverr clients." />
+  <title>Muhammad Imran · SEO & WooCommerce Expert</title>
+  <!-- Google Fonts (Poppins) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0b0e17;
+      color: #eef3ff;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* ===== GLASS & GRADIENT ===== */
+    .glass {
+      background: rgba(20, 30, 55, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(80, 140, 255, 0.15);
+      border-radius: 32px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #7aa9ff, #2b6aff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      background: #1f2f5a;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(0, 20, 80, 0.3);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #3b7bff, #1a4bc0);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 16px 32px rgba(30, 80, 255, 0.5);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #4a7aff;
+      color: #c8daff;
+    }
+    .btn-outline:hover {
+      background: #1a2f5a;
+      border-color: #8ab0ff;
+      transform: translateY(-4px);
+    }
+    /* ===== NAVIGATION (sticky) ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(11, 14, 23, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(60, 120, 255, 0.08);
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      transition: color 0.2s;
+      color: #b0c8ff;
+    }
+    .nav-links a:hover {
+      color: #6aa6ff;
+    }
+    /* ===== HERO ===== */
+    .hero {
+      padding: 60px 0 80px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .hero-content {
+      flex: 1 1 400px;
+    }
+    .hero-content h1 {
+      font-size: 3.6rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .hero-content .subtitle {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #b8ceff;
+      margin: 8px 0 16px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(30, 60, 130, 0.4);
+      backdrop-filter: blur(4px);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      border: 1px solid rgba(70, 140, 255, 0.2);
+    }
+    .hero-badge i {
+      margin-right: 8px;
+      color: #5b8cff;
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .hero-avatar {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+    .avatar-circle {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #142a5a, #0a1a30);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5.4rem;
+      font-weight: 700;
+      color: #b0d0ff;
+      border: 4px solid #2f5fff;
+      box-shadow: 0 20px 50px rgba(0, 40, 150, 0.5);
+      margin: 0 auto;
+    }
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(40, 70, 140, 0.2);
+    }
+    .section-title {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 48px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, #3b7bff, #8ab4ff);
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: rgba(18, 28, 55, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 28px 20px;
+      border-radius: 28px;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(60, 120, 255, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #4a7aff;
+      box-shadow: 0 20px 40px rgba(30, 80, 255, 0.2);
+      background: rgba(24, 38, 75, 0.7);
+    }
+    .card i {
+      font-size: 2.6rem;
+      color: #5b8cff;
+      margin-bottom: 14px;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .skill-tag {
+      background: rgba(30, 60, 130, 0.3);
+      backdrop-filter: blur(4px);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-block;
+      margin: 4px 4px 0 0;
+      border: 1px solid rgba(70, 140, 255, 0.15);
+      transition: 0.2s;
+    }
+    .skill-tag:hover {
+      border-color: #4a7aff;
+      background: rgba(40, 80, 180, 0.3);
+    }
+    /* portfolio cards */
+    .portfolio-card {
+      background: rgba(14, 22, 45, 0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(60, 120, 255, 0.08);
+      transition: 0.3s;
+    }
+    .portfolio-card:hover {
+      transform: scale(1.02);
+      border-color: #4a7aff;
+      box-shadow: 0 20px 40px rgba(30, 80, 255, 0.2);
+    }
+    .portfolio-img {
+      height: 200px;
+      background: linear-gradient(145deg, #1a2d5a, #0b172f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      color: #8ab4ff;
+      padding: 20px;
+      text-align: center;
+      font-weight: 500;
+      position: relative;
+    }
+    .portfolio-img i {
+      font-size: 4rem;
+      margin-right: 10px;
+      color: #5b8cff;
+    }
+    .portfolio-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .portfolio-body {
+      padding: 22px 24px 28px;
+    }
+    .portfolio-body h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .portfolio-body p {
+      color: #b8ceff;
+      font-size: 0.95rem;
+    }
+    .tech-tag {
+      display: inline-block;
+      background: rgba(40, 80, 180, 0.2);
+      padding: 2px 14px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin: 4px 4px 0 0;
+    }
+    /* stats */
+    .stat-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-around;
+      background: rgba(10, 18, 40, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 40px 20px;
+      border-radius: 60px;
+      margin: 30px 0;
+      border: 1px solid rgba(60, 120, 255, 0.08);
+    }
+    .stat-item {
+      text-align: center;
+      flex: 1 1 120px;
+    }
+    .stat-item .number {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #8ab4ff;
+    }
+    .stat-item .label {
+      font-size: 0.95rem;
+      color: #9bb3e0;
+    }
+    /* testimonial */
+    .testimonial {
+      background: rgba(18, 30, 60, 0.5);
+      backdrop-filter: blur(4px);
+      padding: 32px 28px;
+      border-radius: 30px;
+      border-left: 6px solid #3b7bff;
+      font-style: italic;
+      border: 1px solid rgba(60, 120, 255, 0.1);
+    }
+    .testimonial i {
+      color: #4a7aff;
+      margin-right: 6px;
+    }
+    .contact-card {
+      background: rgba(10, 18, 40, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 40px;
+      border-radius: 40px;
+      display: inline-block;
+      border: 1px solid rgba(60, 120, 255, 0.1);
+    }
+    /* footer */
+    .footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid rgba(40, 70, 140, 0.2);
+      color: #8aa3d0;
+    }
+    /* scroll to top */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, #3b7bff, #1a4bc0);
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 8px 24px rgba(30, 80, 255, 0.4);
+      transition: 0.3s;
+      opacity: 0;
+      pointer-events: none;
+      border: none;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .scroll-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px rgba(30, 80, 255, 0.6);
+    }
+    /* responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+      .nav-links {
+        gap: 14px;
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+      }
+      .stat-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+    /* reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.7s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* typing cursor */
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      background: #5b8cff;
+      margin-left: 4px;
+      animation: blink 0.8s step-end infinite;
+    }
+    @keyframes blink {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+    /* loading shimmer (optional) */
+    .shimmer {
+      background: linear-gradient(90deg, #1a2d5a 25%, #2a4a7a 50%, #1a2d5a 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.8s infinite;
+    }
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== STICKY NAV ===== -->
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo"><span class="gradient-text">MI</span></div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="hero container">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-bolt"></i> 3+ Years Experience</div>
+      <h1>Muhammad Imran</h1>
+      <div class="subtitle"><span id="typing-text"></span><span class="typing-cursor"></span></div>
+      <p style="color:#b8ceff; max-width: 500px; font-size: 1.05rem;">WooCommerce & On‑Page SEO specialist — I help stores rank higher, sell more, and build trust.</p>
+      <div class="cta-group">
+        <a href="#contact" class="btn btn-primary"><i class="fas fa-handshake"></i> Hire Me</a>
+        <a href="#" class="btn btn-outline"><i class="fas fa-file-pdf"></i> Download CV</a>
+        <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+    <div class="hero-avatar">
+      <div class="avatar-circle">MI</div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <div class="container stat-grid reveal">
+    <div class="stat-item"><div class="number counter" data-target="100">0</div><div class="label">Optimized Products</div></div>
+    <div class="stat-item"><div class="number counter" data-target="3">0</div><div class="label">Years Experience</div></div>
+    <div class="stat-item"><div class="number counter" data-target="50">0</div><div class="label">Happy Clients</div></div>
+    <div class="stat-item"><div class="number counter" data-target="90">0</div><div class="label">SEO Scores</div></div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="container reveal">
+    <h2 class="section-title">About Me</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px;">
+      <div style="flex: 2; min-width: 260px;">
+        <p style="font-size: 1.1rem; color: #c8dcff; line-height: 1.8;">I'm Muhammad Imran, a WooCommerce & On‑Page SEO Specialist with 3+ years of experience helping e‑commerce brands increase organic visibility and revenue. I specialize in WooCommerce product listing, Rank Math & Yoast SEO, keyword research, Google Search Console, and technical SEO audits. My approach is data‑driven and client‑focused — I deliver measurable results that grow your business.</p>
+        <div style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <span class="skill-tag"><i class="fas fa-check-circle" style="color:#5b8cff;"></i> WooCommerce</span>
+          <span class="skill-tag"><i class="fas fa-check-circle" style="color:#5b8cff;"></i> Rank Math</span>
+          <span class="skill-tag"><i class="fas fa-check-circle" style="color:#5b8cff;"></i> Yoast SEO</span>
+          <span class="skill-tag"><i class="fas fa-check-circle" style="color:#5b8cff;"></i> GSC</span>
+          <span class="skill-tag"><i class="fas fa-check-circle" style="color:#5b8cff;"></i> Analytics</span>
+        </div>
+      </div>
+      <div style="flex:1; background: rgba(10, 18, 40, 0.5); backdrop-filter: blur(4px); padding: 24px; border-radius: 32px; min-width: 180px; border:1px solid rgba(60,120,255,0.08);">
+        <p><i class="fas fa-graduation-cap" style="color:#5b8cff; width: 28px;"></i> ADP Information Technology</p>
+        <p style="font-size:0.9rem; color:#a3bce0;">Allama Iqbal Open University</p>
+        <p style="margin-top: 16px;"><i class="fas fa-calendar-alt" style="color:#5b8cff; width: 28px;"></i> Freelance · 2023 – Present</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="container reveal">
+    <h2 class="section-title">Skills</h2>
+    <div class="grid-3">
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fab fa-woocommerce"></i> WooCommerce</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fas fa-search"></i> On-Page SEO</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fas fa-chart-line"></i> Rank Math SEO</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fas fa-chart-bar"></i> Yoast SEO</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fas fa-key"></i> Keyword Research</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fab fa-google"></i> Google Search Console</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fab fa-google"></i> Google Analytics</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fas fa-microchip"></i> Technical SEO</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fas fa-store"></i> E‑commerce Store Management</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fas fa-list-ul"></i> Product Listing</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fas fa-clipboard-check"></i> SEO Audit</span>
+      <span class="skill-tag" style="padding:14px 24px; font-size:1rem;"><i class="fas fa-edit"></i> Content Optimization</span>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="container reveal">
+    <h2 class="section-title">Services</h2>
+    <div class="grid-3">
+      <div class="card"><i class="fas fa-shopping-cart"></i><h3>WooCommerce Product Listing</h3><p style="color:#b0c8ff;">High‑converting listings with SEO‑optimized content and rich snippets.</p></div>
+      <div class="card"><i class="fas fa-rocket"></i><h3>SEO Product Optimization</h3><p style="color:#b0c8ff;">Boost visibility and sales with on‑page tweaks & keyword targeting.</p></div>
+      <div class="card"><i class="fas fa-cog"></i><h3>Rank Math SEO Setup</h3><p style="color:#b0c8ff;">Full configuration for maximum rankings & schema markup.</p></div>
+      <div class="card"><i class="fas fa-wrench"></i><h3>Yoast SEO Optimization</h3><p style="color:#b0c8ff;">Fine‑tune Yoast settings for better CTR and readability.</p></div>
+      <div class="card"><i class="fas fa-microchip"></i><h3>Technical SEO</h3><p style="color:#b0c8ff;">Site speed, crawlability, core web vitals & structured data.</p></div>
+      <div class="card"><i class="fas fa-database"></i><h3>Keyword Research</h3><p style="color:#b0c8ff;">Find high‑value keywords with low competition and high intent.</p></div>
+      <div class="card"><i class="fas fa-chart-simple"></i><h3>Google Search Console Setup</h3><p style="color:#b0c8ff;">Property verification, sitemap submission & performance tracking.</p></div>
+      <div class="card"><i class="fas fa-chart-pie"></i><h3>Google Analytics Setup</h3><p style="color:#b0c8ff;">Configure GA4, goals, and e‑commerce tracking for insights.</p></div>
+      <div class="card"><i class="fas fa-clipboard-list"></i><h3>On‑Page SEO Audit</h3><p style="color:#b0c8ff;">Detailed audit with actionable recommendations for improvement.</p></div>
+      <div class="card"><i class="fas fa-store-alt"></i><h3>E‑commerce Store Management</h3><p style="color:#b0c8ff;">End‑to‑end management of WooCommerce stores, from setup to optimization.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section id="portfolio" class="container reveal">
+    <h2 class="section-title">Portfolio</h2>
+    <div class="grid-3">
+      <!-- project 1 -->
+      <div class="portfolio-card">
+        <div class="portfolio-img" style="background: linear-gradient(145deg, #1a335a, #0a1a30);"><i class="fas fa-store"></i> WooStore</div>
+        <div class="portfolio-body"><h4>WooCommerce Store Optimization</h4><p style="color:#b0c8ff;">Full audit & optimization for a 40% traffic lift. Improved conversion rate by 22%.</p><div><span class="tech-tag">WooCommerce</span><span class="tech-tag">SEO</span></div><a href="#" class="btn btn-primary" style="padding:8px 24px; margin-top:12px; font-size:0.8rem;">View Project <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <!-- project 2 -->
+      <div class="portfolio-card">
+        <div class="portfolio-img" style="background: linear-gradient(145deg, #1a335a, #0a1a30);"><i class="fas fa-magic"></i> RankMath Pro</div>
+        <div class="portfolio-body"><h4>Rank Math SEO Setup</h4><p style="color:#b0c8ff;">Advanced setup, schema markup, and internal linking strategy. Ranked 3 keywords on page 1.</p><div><span class="tech-tag">Rank Math</span><span class="tech-tag">Schema</span></div><a href="#" class="btn btn-primary" style="padding:8px 24px; margin-top:12px; font-size:0.8rem;">View Project <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <!-- project 3 -->
+      <div class="portfolio-card">
+        <div class="portfolio-img" style="background: linear-gradient(145deg, #1a335a, #0a1a30);"><i class="fas fa-boxes"></i> Product List</div>
+        <div class="portfolio-body"><h4>Product Listing Optimization</h4><p style="color:#b0c8ff;">300+ products listed with SEO‑friendly titles, descriptions, and images. Increased visibility by 65%.</p><div><span class="tech-tag">WooCommerce</span><span class="tech-tag">Copywriting</span></div><a href="#" class="btn btn-primary" style="padding:8px 24px; margin-top:12px; font-size:0.8rem;">View Project <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <!-- project 4 -->
+      <div class="portfolio-card">
+        <div class="portfolio-img" style="background: linear-gradient(145deg, #1a335a, #0a1a30);"><i class="fas fa-clipboard-check"></i> SEO Audit</div>
+        <div class="portfolio-body"><h4>On‑Page SEO Audit</h4><p style="color:#b0c8ff;">Comprehensive audit with 50+ fixes. Improved site speed and core web vitals.</p><div><span class="tech-tag">Technical SEO</span><span class="tech-tag">GSC</span></div><a href="#" class="btn btn-primary" style="padding:8px 24px; margin-top:12px; font-size:0.8rem;">View Project <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <!-- project 5 -->
+      <div class="portfolio-card">
+        <div class="portfolio-img" style="background: linear-gradient(145deg, #1a335a, #0a1a30);"><i class="fab fa-google"></i> GSC Setup</div>
+        <div class="portfolio-body"><h4>Google Search Console Setup</h4><p style="color:#b0c8ff;">Property verification, sitemap submission, and performance dashboard. Tracked 1.2M impressions.</p><div><span class="tech-tag">GSC</span><span class="tech-tag">Analytics</span></div><a href="#" class="btn btn-primary" style="padding:8px 24px; margin-top:12px; font-size:0.8rem;">View Project <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+      <!-- project 6 -->
+      <div class="portfolio-card">
+        <div class="portfolio-img" style="background: linear-gradient(145deg, #1a335a, #0a1a30);"><i class="fas fa-chart-simple"></i> SEO Perf</div>
+        <div class="portfolio-body"><h4>SEO Performance Improvement</h4><p style="color:#b0c8ff;">+55% organic traffic in 60 days using content optimization and link building.</p><div><span class="tech-tag">SEO</span><span class="tech-tag">Content</span></div><a href="#" class="btn btn-primary" style="padding:8px 24px; margin-top:12px; font-size:0.8rem;">View Project <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="container reveal">
+    <h2 class="section-title">Testimonials</h2>
+    <div class="grid-3">
+      <div class="testimonial"><i class="fas fa-quote-left"></i> "Demo Testimonial – This is a sample testimonial for portfolio presentation only. Imran delivered outstanding SEO results." <br><span style="font-weight:400; color:#8ab4ff;">— Sample Client, Fiverr</span></div>
+      <div class="testimonial"><i class="fas fa-quote-left"></i> "Demo Testimonial – Professional, fast, and detailed. Our WooCommerce store saw immediate improvements." <br><span style="font-weight:400; color:#8ab4ff;">— Sample Client, Upwork</span></div>
+      <div class="testimonial"><i class="fas fa-quote-left"></i> "Demo Testimonial – Highly recommend Imran for SEO and WooCommerce optimization. Great communication." <br><span style="font-weight:400; color:#8ab4ff;">— Sample Client, Fiverr</span></div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="container reveal">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-card">
+      <p style="font-size:1.2rem;"><i class="fas fa-envelope" style="color:#5b8cff; width: 32px;"></i> imranglobalconnect@gmail.com</p>
+      <p style="margin-top: 16px;"><i class="fas fa-phone" style="color:#5b8cff; width: 32px;"></i> +92 300 1234567 (demo)</p>
+      <div style="margin-top: 28px; display: flex; gap: 20px;">
+        <a href="#" style="color:#8ab4ff; transition:0.2s;"><i class="fab fa-github fa-2x"></i></a>
+        <a href="#" style="color:#8ab4ff; transition:0.2s;"><i class="fab fa-linkedin fa-2x"></i></a>
+        <a href="#" style="color:#8ab4ff; transition:0.2s;"><i class="fab fa-fiverr fa-2x"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer container">
+    <p>Copyright © 2026 Muhammad Imran · Built with <i class="fas fa-heart" style="color:#5b8cff;"></i></p>
+  </footer>
+
+  <!-- ===== SCROLL TO TOP BUTTON ===== -->
+  <button id="scrollTopBtn" class="scroll-top"><i class="fas fa-chevron-up"></i></button>
+
+  <script>
+    // ===== TYPING EFFECT =====
+    document.addEventListener('DOMContentLoaded', function() {
+      const text = 'WooCommerce & On-Page SEO Specialist';
+      const typingEl = document.getElementById('typing-text');
+      let idx = 0;
+      function type() {
+        if (idx < text.length) {
+          typingEl.textContent += text.charAt(idx);
+          idx++;
+          setTimeout(type, 50);
+        }
+      }
+      type();
+
+      // ===== SCROLL REVEAL =====
+      const reveals = document.querySelectorAll('.reveal');
+      function reveal() {
+        reveals.forEach(el => {
+          const top = el.getBoundingClientRect().top;
+          const winH = window.innerHeight;
+          if (top < winH - 80) {
+            el.classList.add('active');
+          }
+        });
+      }
+      window.addEventListener('scroll', reveal);
+      reveal();
+
+      // ===== COUNTER ANIMATION =====
+      const counters = document.querySelectorAll('.counter');
+      let counted = false;
+      function startCounters() {
+        if (counted) return;
+        const trigger = counters[0]?.getBoundingClientRect().top;
+        if (trigger < window.innerHeight - 100) {
+          counted = true;
+          counters.forEach(c => {
+            const target = parseInt(c.getAttribute('data-target'));
+            let current = 0;
+            const increment = target / 60;
+            const update = () => {
+              current += increment;
+              if (current < target) {
+                c.textContent = Math.ceil(current);
+                requestAnimationFrame(update);
+              } else {
+                c.textContent = target;
+              }
+            };
+            update();
+          });
+        }
+      }
+      window.addEventListener('scroll', startCounters);
+      setTimeout(startCounters, 300);
+
+      // ===== SCROLL TO TOP =====
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+          scrollBtn.classList.add('visible');
+        } else {
+          scrollBtn.classList.remove('visible');
+        }
+      });
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // ===== SMOOTH NAV LINKS =====
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId.startsWith('#')) {
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+              targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+    });
+  </script>
+  <!-- NOTE: separate style.css and script.js are included in the provided files structure -->
+</body>
+</html>
